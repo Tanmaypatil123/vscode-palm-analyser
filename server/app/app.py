@@ -2,7 +2,7 @@ import dotenv
 import os
 
 from fastapi import FastAPI
-from .schemas import AnalyseItem
+from .schemas import AnalyseItem 
 from .model import open_chain
 from fastapi.middleware.cors import CORSMiddleware
 

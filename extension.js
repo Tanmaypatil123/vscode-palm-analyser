@@ -2,6 +2,7 @@
 const vscode = require('vscode');
 const axios = require('axios');
 const https = require('https');
+const { write } = require('fs');
 
 /**
  * @param {vscode.ExtensionContext} context
@@ -35,9 +36,7 @@ function activate(context) {
 			  });
 			
 		}
-		
 	});
-	
 	context.subscriptions.push(disposable);
 }
 
@@ -50,7 +49,9 @@ function getWebviewContent(data) {
 	  <title>Cat Coding</title>
   </head>
   <body>
-	  <h1>${data}</h1>
+	<div markdown="1">
+	${data}
+	</div>
   </body>
   </html>`;
   }
